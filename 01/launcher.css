@@ -39,13 +39,25 @@
     background-color: #5fe45f;
     cursor: pointer;
     border-radius: 5vw;
+    user-select: none;
 
 
 }
 
 .launcher-menu {
-    visibility: hidden;
+    //visibility: hidden;
     position: fixed;
+    top: 50%;
+    right: 5vw;
+}
+.launcher-menu ul li{
+  border-radius: 5vw;
+
+  width: 6vw;
+  height: 6vw;
+}
+.launcher-menu ul li #a{
+  background-color: #a272f7;
 }
 
 .launcher-container {
