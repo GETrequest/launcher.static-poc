@@ -13,13 +13,23 @@
 
         <div id="menu" class="launcher-menu">
             <!-- Display menu for all available apps -->
-            <div onclick="launcher.toggleMenu();">Close</div>
+            <div onclick="launcher.close();">Close</div>
             <ul>
-                <li id="a">Item 1</li>
-                <li id="b">Item 2</li>
-                <li id="c">Item 3</li>
-                <li id="d">Item 4</li>
-                <li id="e">Item 5</li>
+                <li id="a" data-app-icon>
+                    <a>Item 1</a>
+                </li>
+                <li id="b" data-app-icon>
+                    <a>Item 2</a>
+                </li>
+                <li id="c" data-app-icon>
+                    <a>Item 3</a>
+                </li>
+                <li id="d" data-app-icon>
+                    <a>Item 4</a>
+                </li>
+                <li id="e" data-app-icon>
+                    <a>Item 5</a>
+                </li>
             </ul>
         </div>
 

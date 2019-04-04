@@ -45,7 +45,6 @@
 }
 
 .launcher-menu {
-    //visibility: hidden;
     position: fixed;
     top: 50%;
     right: 5vw;
@@ -58,6 +57,10 @@
 }
 .launcher-menu ul li #a{
   background-color: #a272f7;
+}
+
+.launcher-menu ul li.active {
+  font-weight: bold;
 }
 
 .launcher-container {
