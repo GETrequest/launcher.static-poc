@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>01</title>
+        <link href="launcher.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <p>Simple static launcher poc</p>
+
+        <div id="open" class="launcher-root" onclick="launcher.draw();">
+            <!-- Initial visible. Used to open launcher menu -->
+            Click me
+        </div>
+
+        <div id="menu" class="launcher-menu">
+            <!-- Display menu for all available apps -->
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </div>
+
+        <div class="launcher-container">
+            <!-- Content goes here, should be modal overlay -->
+        </div>
+
+        <script src="src/launcher.js"></script>
+    </body>
+</html> 

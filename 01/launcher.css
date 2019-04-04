@@ -1,0 +1,15 @@
+.launcher-root {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    background-color: green;
+}
+
+.launcher-menu {
+    visibility: hidden;
+    position: fixed;
+}
+
+.launcher-container {
+    visibility: hidden
+}
