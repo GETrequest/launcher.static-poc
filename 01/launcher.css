@@ -22,47 +22,82 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
-
 .launcher-root {
-    position: fixed;
-    right: 2vw;
-    width: 6vw;
-    height: 6vw;
-    top: 50%;
+  position: fixed;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  top: 50%;
 
-    font-size: 3vw;
-    line-height: .58;
-    text-align: center;
+  font-size: 1.6rem;
+  line-height: .52;
+  text-align: center;
 
-    color: white;
-    background-color: #5fe45f;
-    cursor: pointer;
-    border-radius: 5vw;
-    user-select: none;
+  color: white;
 
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
 
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(242,115,72,1) 100%);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+  transition: all .2s cubic-bezier(1, 0.28, 0.26, 2.09);
+  transform-origin: 50% 50%;
+}
+.launcher-root:hover{
+
+  transform: scale(1.2);
+  background: linear-gradient(135deg, rgba(255,175,75,1) 20%, rgba(242,115,72,1) 100%);
 }
 
 .launcher-menu {
-    position: fixed;
-    top: 50%;
-    right: 5vw;
+  position: fixed;
+  top: 30%;
+  height: 35%;
+  right: 0;
+
+  font-size: 2rem;
+  line-height: .8;
+  width: 8rem;
+
 }
 .launcher-menu ul li{
-  border-radius: 5vw;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1.3px 5px 0 rgba(0,0,0,0.2);
+  display: inline-block;
 
-  width: 6vw;
-  height: 6vw;
+  margin: .2rem;
+  padding: .4rem;
+  cursor: pointer;
 }
+
+
+.launcher-menu ul li:nth-child(2){
+  transform: translateX(-20px);
+}
+.launcher-menu ul li:nth-child(3){
+  transform: translateX(-28px);
+}
+.launcher-menu ul li:nth-child(4){
+  transform: translateX(-20px);
+}
+
+
 .launcher-menu ul li #a{
-  background-color: #a272f7;
-}
 
+}
 .launcher-menu ul li.active {
   font-weight: bold;
+  background: #81efa2;
+  color: white;
+}
+.launcher-container {
+  visibility: hidden
 }
 
-.launcher-container {
-    visibility: hidden
+li{
+  list-style: none;
 }
