@@ -1,3 +1,94 @@
+// helpers
+
+$toggler-size: 30px;
+$item-size: $toggler-size * 2;
+
+$item-count: 8;
+
+@mixin absolute-center {
+  position: fixed;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  top: 2rem;
+  text-align: center;
+  background: linear-gradient(to right, rgba(35,217,99,1) 0%, rgba(36,227,141,1) 100%);
+}
+
+@mixin line {
+  display: block;
+  z-index: 1;
+  transition: transform .5s, top .5s;
+}
+
+.menu-toggler {
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 0.52;
+  text-align: center;
+  background: linear-gradient(to right, rgba(35,217,99,1) 0%, rgba(36,227,141,1) 100%);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+  transition: all .2s cubic-bezier(1, 0.28, 0.26, 2.09);
+  transform-origin: 50% 50%;
+}
+
+.menu-toggler:hover{
+  transform: scale(1.2);
+  background: linear-gradient(to right, rgba(35,217,99,1) 0%, rgba(36,227,141,1) 100%);
+}
+
+.menu-toggler:hover ~ ul {
+  .menu-item {
+    opacity: 1;
+  }
+  @for $i from 0 through $item-count + 1 {
+    .menu-item:nth-child(#{$i + 1}) {
+      transform: rotate(-180deg / $item-count * $i) translateX(-100 - 40px);
+    }
+  }
+}
+
+.menu-toggler {
+  @include line;
+  @include absolute-center;
+}
+.menu{
+  //transform: rotate(-90deg);
+}
+
+@for $i from 0 through $item-count - 1 {
+  .menu-item:nth-child(#{$i + 1}) a {
+    transform: rotate(180deg / $item-count * $i);
+  }
+}
+
+.menu-item {
+  position: fixed;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  top: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+
+  display: block;
+  opacity: 0;
+
+  transition: .5s;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1.3px 5px 0 rgba(0,0,0,0.2);
+
+  margin: .2rem;
+  padding: .4rem;
+  cursor: pointer;
+}
+
+
 /* fallback */
 @font-face {
   font-family: 'Material Icons';
@@ -43,8 +134,6 @@ iframe{
   cursor: pointer;
   border-radius: 50%;
   user-select: none;
-
-  cursor: pointer;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 
   transition: all .2s cubic-bezier(1, 0.28, 0.26, 2.09);

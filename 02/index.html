@@ -1,42 +1,60 @@
 <html>
     <head>
-        <title>01</title>
-        <link href="launcher.css" rel="stylesheet" type="text/css">
+        <title>02</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <p>Simple static launcher poc</p>
+      <iframe src="https://de.wikipedia.org/wiki/Inlineframe"></iframe>
 
         <!-- Initial visible. Used to open launcher menu -->
-        <div id="open" class="launcher-root" onclick="launcher.toggleMenu();">
-            •<br>•&nbsp;&nbsp;<br>•
-        </div>
-
+        <!--
         <div id="menu" class="launcher-menu">
-            <!-- Display menu for all available apps
-            <div onclick="launcher.close();">Close</div>-->
+            Display menu for all available apps
+
+            <div id="close" onclick="launcher.close();"><i class="material-icons" id="close-mark">close</i></div>
             <ul>
-                <li id="a" data-app-icon>
-                    <a><i class="material-icons">atm</i></a>
-                </li>
-                <li id="b" data-app-icon>
-                    <a><i class="material-icons">visibility</i></a>
-                </li>
-                <li id="c" data-app-icon>
-                    <a><i class="material-icons">forward</i></a>
-                </li>
-                <li id="d" data-app-icon>
-                    <a><i class="material-icons">gps_fixed</i></a>
-                </li>
-                <li id="e" data-app-icon>
-                    <a><i class="material-icons">palette</i></a>
-                </li>
+              <li id="a" data-app-icon>
+                  <a><i class="material-icons">atm</i></a>
+              </li>
+              <li id="b" data-app-icon>
+                  <a><i class="material-icons">visibility</i></a>
+              </li>
+              <li id="c" data-app-icon>
+                  <a><i class="material-icons">forward</i></a>
+              </li>
+              <li id="d" data-app-icon>
+                  <a><i class="material-icons">gps_fixed</i></a>
+              </li>
+              <li id="e" data-app-icon>
+                  <a><i class="material-icons">palette</i></a>
+              </li>
             </ul>
         </div>
+-->
+        <nav class='menu'>
+          <div class='menu-toggler' id='menu-toggler' >•<br>•<br>•</div>
+          <ul>
+            <li class='menu-item'>
+              <i class="material-icons">atm</i>
+            </li>
+            <li class='menu-item'>
+              <i class="material-icons">visibility</i>
+            </li>
+            <li class='menu-item'>
+              <i class="material-icons">forward</i>
+            </li>
+            <li class='menu-item'>
+              <i class="material-icons">gps_fixed</i>
+            </li>
+            <li class='menu-item'>
+              <i class="material-icons">palette</i>
+            </li>
+          </ul>
+      </nav>
 
-        <div id="container" class="launcher-container">
-            <!-- Content goes here, should be modal overlay -->
-        </div>
-
-        <script src="src/launcher.js"></script>
+      <div id="container" class="launcher-container">
+          <!-- Content goes here, should be modal overlay -->
+      </div>
+      <script src="src/launcher.js"></script>
     </body>
 </html>
