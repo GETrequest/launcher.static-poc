@@ -17,10 +17,10 @@ const launcher = {
   },
 
   close: () => {
-    const menuIcons = document.getElementById('menu').querySelectorAll('[data-app-icon]');
-    menuIcons.forEach(element => {
-       element.classList.remove('active');
-    });
+    // const menuIcons = document.getElementById('menu').querySelectorAll('[data-app-icon]');
+    // menuIcons.forEach(element => {
+    //    element.classList.remove('active');
+    // });
     launcher.toggleMenu();
   },
 
@@ -28,11 +28,10 @@ const launcher = {
     const menu = document.getElementById('menu');
     const open = document.getElementById('open');
     const container = document.getElementById('container');
-
+    
     // open.style.visibility = 'visible';
     menu.style.visibility = 'hidden';
-    container.style.visibility = 'hidden';
-
+    
     menu.style.padding = '10px'; /* needed for mouseleave event to work correctly! */
 
     launcher.appendAppIconListener();
@@ -45,6 +44,12 @@ const launcher = {
     menu.addEventListener('mouseout', (event) => {
       if (event.target.getAttribute('id') === 'menu') {
         launcher.toggleMenu();
+      }
+    });
+
+    container.addEventListener('click', event => { 
+      if (event.target === container) {
+        launcher.closeApp();
       }
     });
   },
@@ -61,14 +66,27 @@ const launcher = {
   },
 
   openApp: (id) => {
-    const menuIcons = document.getElementById('menu').querySelectorAll('[data-app-icon]');
-    menuIcons.forEach(element => {
-      if (element.getAttribute('id') === id) {
-        element.classList.add('active');
-      } else {
-        element.classList.remove('active');
-      }
-    });    
+    // const menuIcons = document.getElementById('menu').querySelectorAll('[data-app-icon]');
+    // menuIcons.forEach(element => {
+    //   if (element.getAttribute('id') === id) {
+    //     element.classList.add('active');
+    //   } else {
+    //     element.classList.remove('active');
+    //   }
+    // });
+
+    launcher.toggleMenu();
+
+    const contentContainer = document.getElementById('container');
+    contentContainer.querySelector('.launcher-content').innerHTML = `<div>Content of app ${id} goes here...</div>`;
+    contentContainer.classList.add('active');
+  },
+
+  closeApp: () => {
+    const contentContainer = document.getElementById('container');
+    contentContainer.classList.remove('active');
+
+    contentContainer.querySelector('.launcher-content').innerHTML = '';
   }
 }
 

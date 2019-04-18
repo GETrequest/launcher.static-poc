@@ -96,7 +96,25 @@
   color: white;
 }
 .launcher-container {
-  visibility: hidden
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.launcher-container.active {
+  visibility: visible;
+}
+.launcher-content {
+  width: 80vw;
+  height: 80vh;  
+  background-color: rgb(255,255,255);
+  border: black 1px solid;
 }
 
 li{
