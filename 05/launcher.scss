@@ -81,8 +81,8 @@ $item-count:5;
   padding: .4rem;
   cursor: pointer;
   right: 2rem;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   top:50%;
   transition: all .5s ease;
   opacity: 0;
@@ -93,11 +93,8 @@ $item-count:5;
 .hover-open ul{
   @for $i from 0 through $item-count + 1 {
     li:nth-child(#{$i + 1}) {
-      transform: rotateZ(180deg / $item-count * $i) translateX(-$item-size - 10px);
+      transform: rotateZ(180deg / $item-count * $i) translateX(-$item-size - 20px);
       opacity: 1;
-      a i{
-          transform: rotateZ($item-count * $i + 75deg) ;
-      }
     }
   }
 
@@ -107,7 +104,7 @@ $item-count:5;
 }
 @for $i from 0 through $item-count - 1 {
   .hover-open ul li:nth-child(#{$i + 1}) a {
-    transform: rotate(360deg / $item-count * $i);
+    transform: rotate(75deg / $item-count * $i);
   }
 }
 
