@@ -1,0 +1,135 @@
+/* Global SASS Variables */
+
+$toggler-size: 30px;
+$item-size: $toggler-size * 2;
+$item-count: 6;
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+}
+
+.material-icons, .launcher-root {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  //font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.launcher-root {
+  position: fixed;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  top: 50%;
+
+  font-size: 1.6rem;
+  line-height: .52;
+  text-align: center;
+
+  color: white;
+
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 11;
+
+  background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(242,115,72,1) 100%);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+  transition: all .2s cubic-bezier(1, 0.28, 0.26, 2.09);
+  transform-origin: 50% 50%;
+}
+.launcher-root:hover{
+  transform: scale(1.2);
+  background: linear-gradient(135deg, rgba(255,175,75,1) 20%, rgba(242,115,72,1) 100%);
+}
+
+.launcher-menu {
+  position: fixed;
+  top: 30%;
+  height: 35%;
+  right: 0;
+  font-size: 2.2rem;
+  line-height: .8;
+  width: 8rem;
+  z-index: 10;
+}
+
+.launcher-menu ul li{
+
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1.3px 5px 0 rgba(0,0,0,0.2);
+  display: inline-block;
+
+  margin: .2rem;
+  padding: .4rem;
+  cursor: pointer;
+  right: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  top: 2rem;
+  transform: rotate(0deg) translateX(0);
+  transition: all .5s ease;
+  opacity: 0;
+}
+
+.hover-open ul{
+  @for $i from 0 through $item-count + 1 {
+    li:nth-child(#{$i + 1}) {
+      transform: rotate(-100deg / $item-count * $i) translateX(-100 - 10px);
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+.launcher-menu ul li #a{
+
+}
+.launcher-menu ul li.active {
+  font-weight: bold;
+  background: #81efa2;
+  color: white;
+}
+.launcher-container {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.launcher-container.active {
+  visibility: visible;
+}
+.launcher-content {
+  width: 80vw;
+  height: 80vh;
+  background-color: rgb(255,255,255);
+  border: black 1px solid;
+}
+
+li{
+  list-style: none;
+}
